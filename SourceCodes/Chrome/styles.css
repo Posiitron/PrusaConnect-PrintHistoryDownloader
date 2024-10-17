@@ -1,0 +1,225 @@
+:root {
+  --prusa-orange: #fa6831;
+  --prusa-orange-hover: #ff7b2c;
+  --background-color: #1e1e1e;
+  --secondary-bg: #2d2d2d;
+  --text-color: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-radius: 12px;
+  --spacing-unit: 12px;
+  --small-spacing: 8px;
+  --transition-speed: 0.2s;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+body {
+  width: 340px;
+  height: auto;
+  margin: 0;
+  padding: var(--spacing-unit);
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+header {
+  padding: var(--spacing-unit);
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title-section {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.accent {
+  color: var(--prusa-orange);
+}
+
+.description {
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-unit);
+  text-align: center;
+  font-size: 0.875rem;
+  padding: var(--small-spacing);
+}
+
+.status-section {
+  margin-bottom: var(--spacing-unit);
+  padding: var(--small-spacing);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--secondary-bg);
+  padding: 10px 12px;
+  border-radius: var(--border-radius);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #666;
+  transition: background-color var(--transition-speed);
+}
+
+.status-dot.connected { 
+  background-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+}
+
+.status-dot.disconnected { 
+  background-color: #f44336;
+  box-shadow: 0 0 6px rgba(244, 67, 54, 0.5);
+}
+
+.actions {
+  margin-bottom: var(--small-spacing);
+  padding: var(--small-spacing);
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn.primary {
+  background-color: var(--prusa-orange);
+  color: white;
+  border-radius: var(--border-radius);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background-color: var(--prusa-orange-hover);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover:not(:disabled) .icon {
+  transform: rotate(360deg);
+}
+
+.progress-container {
+  margin: var(--spacing-unit) 0;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: var(--secondary-bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--prusa-orange);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Output Container for dynamic messages */
+.output {
+  background-color: var(--secondary-bg);
+  padding: var(--spacing-unit);
+  border-radius: var(--border-radius);
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  margin: 0 var(--small-spacing);
+  min-height: 60px;
+  color: var(--text-color);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Custom message states */
+.output.warning {
+  color: #ffa500;  /* Orange for warning */
+}
+
+.output.error {
+  color: #f44336;  /* Red for error */
+}
+
+.output.success {
+  color: #4caf50;  /* Green for success */
+}
+
+footer {
+  padding: var(--spacing-unit);
+  background-color: var(--secondary-bg);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: var(--spacing-unit);
+}
+
+/* Optional: Remove scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
