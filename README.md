@@ -1,5 +1,3 @@
-Certainly! Here's the updated README with callouts added where appropriate:
-
 # Prusa Print History Downloader
 
 **Prusa Print History Downloader** is a Chrome and Firefox extension that allows users to download their print history from the Prusa Connect Cloud effortlessly.
